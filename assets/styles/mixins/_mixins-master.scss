@@ -22,3 +22,70 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin visuallyhidden() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media screen and (min-width: $size__screen-xs)  { @content; } 
+  }
+  @if $point == sm {
+    @media screen and (min-width: $size__screen-sm) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: $size__screen-md) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: $size__screen-lg) { @content; }
+  }
+  @else if $point == xl {
+    @media screen and (min-width: $size__screen-xl) { @content; }
+  }
+}
+
+@mixin no-bullets() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin inline-list() {
+  @include no-bullets();
+  li {
+   display: inline-block; 
+ }
+}
+
+@mixin icon-font($icon: cog, $position: none, $color: $color__light-grey) {
+  @if $position == "after" {
+    &:after {
+      margin-left: .5em;
+      @include fa-icon;
+      @extend .fa-#{$icon};
+      color: $color;
+    }
+  }
+  @elseif $position == "before" {
+    &:before {
+      margin-right: .5em;
+      @include fa-icon;
+      @extend .fa-#{$icon};
+      color: $color;
+    }
+  }
+  @else {
+    @include fa-icon;
+    @extend .fa-#{$icon};
+    color: $color;
+  }
+}
+

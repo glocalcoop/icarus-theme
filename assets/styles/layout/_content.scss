@@ -1,1 +1,10 @@
-.site-content {}
+.site-content {
+    width: $size__site;
+    max-width: $size__site-max;
+    margin-right: auto;
+    margin-left: auto;
+
+    .content-area {
+        width: $size__site-content;
+    }
+}

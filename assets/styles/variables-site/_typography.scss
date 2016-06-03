@@ -23,18 +23,20 @@ $calibri:         Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
-$typewriterBackup: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+$typewriter: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
 $prestige:          "Prestige Elite";
 
 // Now create some variables for the font stacks we want to use on this site.
-$base-font-family: $calibri; // The font family set on the html element.
-$font-body:        $calibri;
-$font-monospace:   $typewriterBackup;
-$font-navigation:  $typewriterBackup;
-$font-side-bar:    $typewriterBackup;
+$font__body:        $calibri;
+$font__monospace:   $typewriter;
+$font__navigation:  $typewriter;
+$font__side-bar:    $typewriter;
 
-$font__main: $base-font-family;
-$font__code: $font-monospace;
-$font__pre: $font-monospace;
+$font__main: $font__body;
+$font__code: $font__monospace;
+$font__pre: $font__monospace;
 $font__line-height-body: $base-line-height;
 $font__line-height-pre: 1.6;
+
+$fa-font-path:        "dist/fonts";
+$fa-font-size-base:   16px;

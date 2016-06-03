@@ -1,6 +1,14 @@
 // @import "../layout/content-sidebar";
 // @import "../layout/sidebar-content";
 /*--------------------------------------------------------------
+## Content, Sidebar, Header, Footer
+--------------------------------------------------------------*/
+@import "content";
+@import "sidebar";
+@import "header";
+@import "footer";
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 @import "primary/posts-and-pages";
