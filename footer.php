@@ -14,11 +14,24 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        <?php if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
+            return;
+        }
+        ?>
+
+        <?php $widget_count = icarus_count_widgets( 'sidebar-footer' ) ?>
+
+        <div class="footer-links widget-area <?php echo ( $widget_count ) ? $widget_count : ''; ?>" role="complementary">
+            <?php dynamic_sidebar( 'sidebar-footer' ); ?>
+        </div><!-- .footer-links -->
+            
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'icarus' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'icarus' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'icarus' ), 'icarus', '<a href="http://glocal.coop" rel="designer">Pea, Glocal</a>' ); ?>
+			
 		</div><!-- .site-info -->
+        <div class="site-license">
+            
+        </div><!-- .site-license -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
