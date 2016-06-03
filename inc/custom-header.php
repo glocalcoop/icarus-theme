@@ -22,10 +22,10 @@
  */
 function icarus_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'icarus_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => get_stylesheet_directory_uri() . '/dist/images/banner-full.jpg',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1200,
+		'height'                 => 182,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'icarus_header_style',
 	) ) );
