@@ -1,0 +1,90 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media screen and (min-width: $xs-screen)  { @content; } 
+  }
+  @if $point == sm {
+    @media screen and (min-width: $sm-screen) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: $md-screen) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: $lg-screen) { @content; }
+  }
+  @else if $point == xl {
+    @media screen and (min-width: $xl-screen) { @content; }
+  }
+}
+
+@mixin include-font($font-family, $file-name, $weight: normal, $style: normal) {
+@font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+        //IE9 Compatibility Mode
+        src: url('../fonts/#{$file-name}.eot');
+        //IE6-IE8
+        src: url('../fonts/#{$file-name}.eot?#iefix') format('embedded-opentype'),
+             //Super Modern Browsers
+             url('../fonts/#{$file-name}.woff2') format('woff2'),
+              url('../fonts/#{$file-name}.otf') format('otf'),
+             //Majority of Modern Browsers
+             url('../fonts/#{$file-name}.woff') format('woff'),
+             //Safari, Android, iOS
+             url('../fonts/#{$file-name}.ttf') format('truetype'),
+             //Legacy iOS
+             url('../fonts/#{$file-name}.svg##{$file-name}') format('svg');
+    }
+}
+
+/**
+ * Lists
+ */
+@mixin no-bullets() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin inline-list() {
+  @include no-bullets();
+  li {
+   display: inline-block; 
+ }
+}
+
+@mixin visuallyhidden() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+
