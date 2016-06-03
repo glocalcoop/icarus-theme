@@ -1,9 +1,9 @@
 {
-  "name": "glocalcoop/anp-network-main-redux",
+  "name": "glocalcoop/icarus-theme",
   "type": "wordpress-theme",
   "license": "GPL-3.0",
-  "description": " A theme for the main site of an ANP network, based on _s with Hybrid Core and Bootstrap",
-  "homepage": "https://github.com/glocalcoop/anp-network-main-redux",
+  "description": "",
+  "homepage": "https://github.com/glocalcoop/icarus-theme",
   "authors": [
     {
       "name": "Pea, Glocal",
@@ -13,52 +13,5 @@
   ],
   "keywords": [
     "wordpress"
-  ],
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-          "name": "justintadlock/hybrid-core",
-          "version": "master",
-          "type": "theme-library",
-          "dist": {
-              "type": "zip",
-              "url": "https://github.com/justintadlock/hybrid-core/archive/master.zip"
-          },
-          "source": {
-              "type": "git",
-              "url": "https://github.com/justintadlock/hybrid-core.git",
-              "reference": "master"
-          }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-          "name": "aristath/kirki",
-          "version": "master",
-          "type": "theme-library",
-          "dist": {
-              "type": "zip",
-              "url": "https://github.com/aristath/kirki/archive/develop.zip"
-          },
-          "source": {
-              "type": "git",
-              "url": "https://github.com/aristath/kirki.git",
-              "reference": "master"
-          }
-      }
-  }
-  ],
-  "require": {
-    "php": ">=5.4.0",
-    "composer/installers": "~1.0",
-    "justintadlock/hybrid-core": "dev-master",
-    "aristath/kirki": "dev-master"
-  },
-    "extra": {
-        "installer-paths": {
-            "./libs/{$name}/": ["type:theme-library"]
-        }
-    }
+  ]
 }

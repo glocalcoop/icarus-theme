@@ -34,7 +34,6 @@ var paths = {
     sprites: src + 'images/sprites/',
     fonts: src + 'fonts/*',
     libs: src + 'vendor/**/*',
-    buddypress: src + 'styles/plugins/buddypress-cover-image.scss',
 
     /* Output paths */
     stylesOutput: dest + 'styles/',
@@ -42,8 +41,7 @@ var paths = {
     imagesOutput: dest + 'images/',
     spritesOutput: dest + 'images/sprites/',
     fontsOutput: dest + 'fonts/',
-    libsOutput: dest + 'vendor/',
-    buddypressOutput: './css/',
+    libsOutput: dest + 'vendor/'
 };
 
 
@@ -68,28 +66,6 @@ gulp.task( 'styles', function() {
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( gulp.dest( paths.stylesOutput ) )
     .pipe( notify( { message: 'Styles task complete' } ) );
-});
-
-gulp.task( 'buddypress', function() {
-    return gulp.src( paths.buddypress, {
-        style: 'expanded'
-    } )
-    .pipe( plumber( { errorHandler: onError } ) )
-    .pipe( sass() )
-    .pipe( rename( { basename: 'buddypress' } ) )
-    .pipe( gulp.dest( paths.buddypressOutput ) )
-    .pipe(postcss([
-        autoprefixer({
-            browsers: ['last 2 version']
-        }),
-        mqpacker({
-            sort: true
-        }),
-    ]))
-    .pipe( minifycss() )
-    .pipe( rename( { basename: 'buddypress.min' } ) )
-    .pipe( gulp.dest( paths.buddypressOutput ) )
-    .pipe( notify( { message: 'BuddyPress task complete' } ) );
 });
 
 gulp.task('scripts', function(){
@@ -138,7 +114,6 @@ gulp.task( 'watch', function() {
     gulp.watch( paths.fonts, [ 'fonts' ] );
     gulp.watch( paths.sprites, [ 'sprites' ] );
     gulp.watch( paths.libs, [ 'libs' ] );
-    gulp.watch( paths.buddypress, [ 'buddypress' ] );
 } );
 
-gulp.task( 'default', [ 'watch', 'styles', 'scripts', 'images', 'fonts', 'buddypress'], function() {});
+gulp.task( 'default', [ 'watch', 'styles', 'scripts', 'images', 'fonts', 'libs'], function() {});
