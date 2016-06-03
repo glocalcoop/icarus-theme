@@ -14,16 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-        <?php if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
-            return;
-        }
-        ?>
+        <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 
-        <?php $widget_count = icarus_count_widgets( 'sidebar-footer' ) ?>
+            <?php $widget_count = icarus_count_widgets( 'sidebar-footer' ) ?>
 
-        <div class="footer-links widget-area <?php echo ( $widget_count ) ? $widget_count : ''; ?>" role="complementary">
-            <?php dynamic_sidebar( 'sidebar-footer' ); ?>
-        </div><!-- .footer-links -->
+            <div class="footer-links widget-area <?php echo ( $widget_count ) ? $widget_count : ''; ?>" role="complementary">
+                <?php dynamic_sidebar( 'sidebar-footer' ); ?>
+            </div><!-- .footer-links -->
+
+        <?php endif; ?>
             
 		<div class="site-info">
 			
