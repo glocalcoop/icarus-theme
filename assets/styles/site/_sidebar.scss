@@ -1,9 +1,71 @@
-.site-content {
-    .widget-area {
-        background-image: url('dist/images/bkgd-sidebar.jpg');
+.widget {
+    @include font-size($font__size-smaller);
+
+    a {
+        font-family: $typewriter;
+        text-transform: uppercase;
+        line-height: 250%;
+        text-decoration: none;
+    }
+
+    .widget-title {
+        margin-bottom: 0;
+    }
+
+    ul,
+    .search-form {
+        @include no-bullets;
+    }
+
+    ul a {
+        display: block;
     }
 }
 
-.footer-links {
-    
+
+.site-content {
+    .widget-area {
+        background-image: url('dist/images/bkgd-sidebar.jpg');
+
+        .widget {
+            margin: 4% 10%;
+
+            ul,
+            .search-form {
+                background-color: $color__white;
+                padding: 1em 2em;
+                border-top: 1px solid $color__border;
+                border-bottom: 1px solid $color__border;
+            }
+
+        }
+    }
 }
+
+.site-footer {
+    .widget {
+
+        a {
+            color: $color__darkest-gray;
+        }
+
+        .widget-title {
+            text-transform: uppercase;
+        }
+        li {
+            padding-right: .5em;
+            padding-left: .5em;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $color__border;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: rgba($color__darkest-gray,.1);
+            }
+
+        }
+    }
+}
+

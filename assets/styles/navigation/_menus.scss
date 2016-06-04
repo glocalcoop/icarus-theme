@@ -57,6 +57,18 @@
 		&:hover > a,
 		&.focus > a {
 		}
+
+		&.crisis-toolkit {
+			background-color: $color__primary;
+			a {
+				color: $color__white;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $color__black;
+			}
+		}
 	}
 	
 	a {
@@ -102,6 +114,19 @@
 	    	}
 	    }
 	}
+
+}
+
+.nav-menu {
+	border-top: 1px solid $color__mid-gray;
+	&> li {
+		border-bottom: 1px solid $color__mid-gray;
+
+		&:not(:last-child) {
+			border-right: 1px solid $color__mid-gray;
+		}
+	}
+
 
 }
 

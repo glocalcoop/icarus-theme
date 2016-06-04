@@ -1,9 +1,60 @@
 .site-footer {
-    background-image: url('dist/images/bkgd-footer.jpg');
+    background-color: $color__background-screen;
 }
 
 .footer-links {
-    width: 77%;
-    margin-right: auto;
-    margin-left: auto;
+    background-color: rgba($color__darkest-gray,.05);
 }
+
+.site-license {
+    margin-bottom: 5em;
+    padding: 1em 2em;
+    background-color: $color__dark-gray;
+    color: $color__light-gray;
+    @include font-size($font__size-smaller);
+    a {
+        color: $color__white;
+    }
+}
+
+@include breakpoint(sm) {
+
+    .footer-links {
+        @include clearfix;
+        padding: .5em;
+        margin-bottom: 1em;
+
+        .widget {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+@include breakpoint(md) {
+    .site-footer {
+        background-image: url('dist/images/bkgd-footer.jpg');
+
+    }
+
+    .footer-links,
+    .site-license {
+        width: 77%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .footer-links {
+        .widget {
+            width: 20%;
+            float: left;
+        }
+    }
+
+    .site-license {
+        margin-bottom: 15em;
+        padding: 2em 10em;
+    }
+}
+
+

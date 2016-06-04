@@ -1,12 +1,15 @@
 $base-font-size:   2; // The font size set on the root html element.
 $base-line-height: 1.5; // This line-height determines the basic unit of vertical rhythm.
 
-$h1-font-size: 2    * $base-font-size;
-$h2-font-size: 1.5  * $base-font-size;
-$h3-font-size: 1.17 * $base-font-size;
-$h4-font-size: 1    * $base-font-size;
-$h5-font-size: 0.83 * $base-font-size;
-$h6-font-size: 0.67 * $base-font-size;
+$font__size-h1: 3;
+$font__size-h2: 2.5;
+$font__size-h3: 2;
+$font__size-h4: 1.5;
+$font__size-h5: 1.25;
+$font__size-h6: 1;
+$font__size-small: .90;
+$font__size-smaller: .82;
+$font__size-mini: .63;
 
 // First, let's create some font stacks.
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;

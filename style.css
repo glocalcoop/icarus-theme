@@ -248,8 +248,6 @@ th {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto; }
-  .site-content .content-area {
-    width: 65%; }
 
 .site-footer {
   width: 90%;
@@ -265,7 +263,7 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #273628;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -306,7 +304,7 @@ code, kbd, tt, var {
   font-size: 0.9375rem; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #4d4d4d;
   cursor: help; }
 
 mark, ins {
@@ -2373,7 +2371,7 @@ blockquote, q {
     content: ""; }
 
 hr {
-  background-color: #CCCCCC;
+  background-color: #ccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -2458,7 +2456,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
+  color: #4d4d4d;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px; }
@@ -2493,11 +2491,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #CB505D; }
   a:visited {
-    color: purple; }
+    color: #CB505D; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #4d4d4d; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -2538,6 +2536,12 @@ a {
   .main-navigation li {
     float: left;
     position: relative; }
+    .main-navigation li.crisis-toolkit {
+      background-color: #7C0E1E; }
+      .main-navigation li.crisis-toolkit a {
+        color: #fff; }
+      .main-navigation li.crisis-toolkit:hover, .main-navigation li.crisis-toolkit:focus {
+        background-color: #111; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
@@ -2566,6 +2570,13 @@ a {
         width: 16.66%;
         padding: .75em 0;
         background-color: #fff; } }
+
+.nav-menu {
+  border-top: 1px solid #919191; }
+  .nav-menu > li {
+    border-bottom: 1px solid #919191; }
+    .nav-menu > li:not(:last-child) {
+      border-right: 1px solid #919191; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -2684,8 +2695,51 @@ a {
 .site-content {
   background-color: #fff; }
 
+.content-area {
+  padding: .25em 2.5em; }
+
+.widget {
+  font-size: 13.12px;
+  font-size: 0.82rem; }
+  .widget a {
+    font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+    text-transform: uppercase;
+    line-height: 250%;
+    text-decoration: none; }
+  .widget .widget-title {
+    margin-bottom: 0; }
+  .widget ul,
+  .widget .search-form {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .widget ul a {
+    display: block; }
+
 .site-content .widget-area {
   background-image: url("dist/images/bkgd-sidebar.jpg"); }
+  .site-content .widget-area .widget {
+    margin: 4% 10%; }
+    .site-content .widget-area .widget ul,
+    .site-content .widget-area .widget .search-form {
+      background-color: #fff;
+      padding: 1em 2em;
+      border-top: 1px solid #919191;
+      border-bottom: 1px solid #919191; }
+
+.site-footer .widget a {
+  color: #273628; }
+
+.site-footer .widget .widget-title {
+  text-transform: uppercase; }
+
+.site-footer .widget li {
+  padding-right: .5em;
+  padding-left: .5em; }
+  .site-footer .widget li:not(:last-child) {
+    border-bottom: 1px solid #919191; }
+  .site-footer .widget li:hover, .site-footer .widget li:focus {
+    background-color: rgba(39, 54, 40, 0.1); }
 
 .site-branding {
   content: "";
@@ -2694,12 +2748,46 @@ a {
   margin-top: 48px; }
 
 .site-footer {
-  background-image: url("dist/images/bkgd-footer.jpg"); }
+  background-color: #f1f1f1; }
 
 .footer-links {
-  width: 77%;
-  margin-right: auto;
-  margin-left: auto; }
+  background-color: rgba(39, 54, 40, 0.05); }
+
+.site-license {
+  margin-bottom: 5em;
+  padding: 1em 2em;
+  background-color: #4d4d4d;
+  color: #ccc;
+  font-size: 13.12px;
+  font-size: 0.82rem; }
+  .site-license a {
+    color: #fff; }
+
+@media screen and (min-width: 485px) {
+  .footer-links {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    padding: .5em;
+    margin-bottom: 1em; }
+    .footer-links .widget {
+      width: 50%;
+      float: left; } }
+
+@media screen and (min-width: 768px) {
+  .site-footer {
+    background-image: url("dist/images/bkgd-footer.jpg"); }
+  .footer-links,
+  .site-license {
+    width: 77%;
+    margin-right: auto;
+    margin-left: auto; }
+  .footer-links .widget {
+    width: 20%;
+    float: left; }
+  .site-license {
+    margin-bottom: 15em;
+    padding: 2em 10em; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
