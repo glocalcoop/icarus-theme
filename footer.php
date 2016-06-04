@@ -28,6 +28,14 @@
 			
 		</div><!-- .site-info -->
         <div class="site-license">
+
+        <?php
+        // check to see if the logo exists and add it to the page
+        if ( get_theme_mod( 'license_text_setting' ) ) : ?>
+         
+            <?php echo get_theme_mod( 'license_text_setting' ); ?>
+         
+        <?php endif; ?>
             
         </div><!-- .site-license -->
 
