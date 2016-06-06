@@ -24,6 +24,12 @@ function icarus_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+  // Add page slug to singular page
+  if ( is_page() ) {
+    global $post;
+    $classes[] = 'page-' . $post->post_name;
+  }
+
 	return $classes;
 }
 add_filter( 'body_class', 'icarus_body_classes' );
