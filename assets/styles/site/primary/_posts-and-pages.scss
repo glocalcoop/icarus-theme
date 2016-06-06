@@ -16,13 +16,36 @@
 	display: inline;
 }
 
+.entry-title {
+    margin-bottom: .25em;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
 }
 
+.entry-content {
+    margin-top: .25em;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.page-staff,
+.page-advisory-board,
+.page-local-chapters-and-affinity-groups {
+    .entry-content {
+        h3 {
+            clear: both;
+            &:not(:first-child) {
+                padding-top: 1em;
+                margin-top: 1em;
+                border-top: 1px solid $color__border;
+            }
+        }
+    }
 }

@@ -65,7 +65,7 @@
  }
 }
 
-@mixin icon-font($icon: cog, $position: none, $color: $color__light-grey) {
+@mixin icon-font($icon: cog, $position: none, $color: $color__text-main) {
   @if $position == "after" {
     &:after {
       margin-left: .5em;

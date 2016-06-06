@@ -1,0 +1,19 @@
+.breadcrumbs {}
+
+.trail-items {
+	@include no-bullets;
+
+    li {
+        display: inline-block;
+
+        &:not(:last-child) {
+           &:after {
+                @include fa-icon();
+                content: $fa-var-angle-right;
+                margin-right: 5px;
+                margin-left: 5px;
+           }
+
+        }        
+    }
+}

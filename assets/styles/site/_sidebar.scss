@@ -51,13 +51,16 @@
 
         .widget-title {
             text-transform: uppercase;
+            padding-bottom: .25em;
+            font-weight: normal;
         }
         li {
             padding-right: .5em;
             padding-left: .5em;
-
-            &:not(:last-child) {
-                border-bottom: 1px solid $color__border;
+            border-bottom: 1px solid $color__border;
+            
+            &:first-child {
+                border-top: 1px solid $color__border;
             }
 
             &:hover,

@@ -109,8 +109,39 @@
 
 	    	&>li {
 	    		width: 16.66%;
-	    		padding: .75em 0;
+	    		// padding: .75em 0;
 	    		background-color: $color__white;
+	    	}
+
+	    	li {
+	    		&:hover,
+	    		&:focus {
+	    			
+	    		}
+	    		a {
+	    			display: block;
+	    			padding: .75em 0;
+	    		}
+	    		a:hover,
+	    		a:focus {
+	    			background-color: $color__black;
+	    			color: $color__white;
+	    		}
+	    	}
+
+	    	ul {
+	    		margin-top: 25px;
+	    		width: 100%;
+	    		background-color: $color__mid-gray;
+				
+				li {
+					background-color: $color__mid-gray;
+					width: 100%;
+					a {
+						display: block;
+						color: $color__text-main;
+					}
+				}
 	    	}
 	    }
 	}

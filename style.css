@@ -223,12 +223,15 @@ th {
 --------------------------------------------------------------*/
 @media screen and (min-width: 768px) {
   .content-area {
+    height: 100%;
     float: left;
     margin: 0 -35% 0 0;
     width: 100%; }
   .site-main {
+    height: 100%;
     margin: 0 35% 0 0; }
   .site-content .widget-area {
+    height: 100%;
     float: right;
     overflow: hidden;
     width: 35%; } }
@@ -2353,7 +2356,8 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 100%; }
 
 *,
 *:before,
@@ -2568,8 +2572,24 @@ a {
       background-color: #fff; }
       .main-navigation ul > li {
         width: 16.66%;
-        padding: .75em 0;
-        background-color: #fff; } }
+        background-color: #fff; }
+      .main-navigation ul li a {
+        display: block;
+        padding: .75em 0; }
+      .main-navigation ul li a:hover,
+      .main-navigation ul li a:focus {
+        background-color: #111;
+        color: #fff; }
+      .main-navigation ul ul {
+        margin-top: 25px;
+        width: 100%;
+        background-color: #919191; }
+        .main-navigation ul ul li {
+          background-color: #919191;
+          width: 100%; }
+          .main-navigation ul ul li a {
+            display: block;
+            color: #273628; } }
 
 .nav-menu {
   border-top: 1px solid #919191; }
@@ -2596,6 +2616,26 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+/*--------------------------------------------------------------
+## Breadcrumbs
+--------------------------------------------------------------*/
+.trail-items {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .trail-items li {
+    display: inline-block; }
+    .trail-items li:not(:last-child):after {
+      display: inline-block;
+      font: normal normal normal 16px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      margin-right: 5px;
+      margin-left: 5px; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -2693,7 +2733,8 @@ a {
 ## Content, Sidebar, Header, Footer
 --------------------------------------------------------------*/
 .site-content {
-  background-color: #fff; }
+  background-color: #fff;
+  padding-bottom: 1em; }
 
 .content-area {
   padding: .25em 2.5em; }
@@ -2731,13 +2772,16 @@ a {
   color: #273628; }
 
 .site-footer .widget .widget-title {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding-bottom: .25em;
+  font-weight: normal; }
 
 .site-footer .widget li {
   padding-right: .5em;
-  padding-left: .5em; }
-  .site-footer .widget li:not(:last-child) {
-    border-bottom: 1px solid #919191; }
+  padding-left: .5em;
+  border-bottom: 1px solid #919191; }
+  .site-footer .widget li:first-child {
+    border-top: 1px solid #919191; }
   .site-footer .widget li:hover, .site-footer .widget li:focus {
     background-color: rgba(39, 54, 40, 0.1); }
 
@@ -2748,7 +2792,8 @@ a {
   margin-top: 48px; }
 
 .site-footer {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  border-top: 3px solid #919191; }
 
 .footer-links {
   background-color: rgba(39, 54, 40, 0.05); }
@@ -2768,11 +2813,12 @@ a {
     content: "";
     display: table;
     table-layout: fixed;
-    padding: .5em;
+    padding: 1em;
     margin-bottom: 1em; }
     .footer-links .widget {
       width: 50%;
-      float: left; } }
+      float: left;
+      padding-right: 1em; } }
 
 @media screen and (min-width: 768px) {
   .site-footer {
@@ -2784,7 +2830,8 @@ a {
     margin-left: auto; }
   .footer-links .widget {
     width: 20%;
-    float: left; }
+    float: left;
+    padding-right: 1em; }
   .site-license {
     margin-bottom: 15em;
     padding: 2em 10em; } }
@@ -2806,14 +2853,31 @@ a {
 .group-blog .byline {
   display: inline; }
 
+.entry-title {
+  margin-bottom: .25em; }
+
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0; }
 
+.entry-content {
+  margin-top: .25em; }
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.page-staff .entry-content h3,
+.page-advisory-board .entry-content h3,
+.page-local-chapters-and-affinity-groups .entry-content h3 {
+  clear: both; }
+  .page-staff .entry-content h3:not(:first-child),
+  .page-advisory-board .entry-content h3:not(:first-child),
+  .page-local-chapters-and-affinity-groups .entry-content h3:not(:first-child) {
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 1px solid #919191; }
 
 /*--------------------------------------------------------------
 ## Asides

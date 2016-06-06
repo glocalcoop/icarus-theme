@@ -1,5 +1,6 @@
 .site-footer {
     background-color: $color__background-screen;
+    border-top: 3px solid $color__border;
 }
 
 .footer-links {
@@ -21,12 +22,13 @@
 
     .footer-links {
         @include clearfix;
-        padding: .5em;
+        padding: 1em;
         margin-bottom: 1em;
 
         .widget {
             width: 50%;
             float: left;
+            padding-right: 1em;
         }
     }
 }
@@ -48,6 +50,7 @@
         .widget {
             width: 20%;
             float: left;
+            padding-right: 1em;
         }
     }
 
