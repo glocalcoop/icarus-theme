@@ -35,6 +35,13 @@
 	margin: 0 0 1.5em;
 }
 
+.entry-footer {
+    .comments-link, 
+    .edit-link {
+        display: block;
+    }
+}
+
 .page-staff,
 .page-advisory-board,
 .page-local-chapters-and-affinity-groups {
@@ -49,3 +56,23 @@
         }
     }
 }
+
+.archive {
+    .site-main {
+
+        article + article {
+            padding-top: 1em;
+            margin-top: 2em;
+            border-top: 1px solid $color__border;
+        }
+    }
+}
+
+.recent-posts {
+     article + article {
+        padding-top: 1em;
+        margin-top: 2em;
+        border-top: 1px solid $color__border;
+    }
+}
+

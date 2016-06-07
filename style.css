@@ -502,7 +502,7 @@ big {
 .fa-align-right:before {
   content: ""; }
 
-.fa-align-justify:before {
+.fa-align-justify:before, .menu-toggle:before {
   content: ""; }
 
 .fa-list:before {
@@ -2511,57 +2511,34 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
   width: 100%;
-  font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace; }
-  .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 1.5em;
-      left: -999em;
-      z-index: 99999; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto; }
-  .main-navigation li {
-    float: left;
-    position: relative; }
-    .main-navigation li.crisis-toolkit {
-      background-color: #7C0E1E; }
-      .main-navigation li.crisis-toolkit a {
-        color: #fff; }
-      .main-navigation li.crisis-toolkit:hover, .main-navigation li.crisis-toolkit:focus {
-        background-color: #111; }
+  font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  font-size: 14.4px;
+  font-size: 0.9rem; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
+  .main-navigation ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #ccc; }
+    .main-navigation ul li {
+      padding: .35em .5em; }
+      .main-navigation ul li.crisis-toolkit {
+        background-color: #7C0E1E; }
+        .main-navigation ul li.crisis-toolkit a {
+          color: #fff; }
+        .main-navigation ul li.crisis-toolkit:hover, .main-navigation ul li.crisis-toolkit:focus {
+          background-color: #111; }
 
 @media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; }
   .main-navigation {
     position: fixed;
     z-index: 500;
-    float: none; }
+    font-size: 16px;
+    font-size: 1rem; }
     .main-navigation ul {
       display: block;
       width: 90%;
@@ -2572,24 +2549,74 @@ a {
       background-color: #fff; }
       .main-navigation ul > li {
         width: 16.66%;
+        padding: 0;
         background-color: #fff; }
-      .main-navigation ul li a {
-        display: block;
-        padding: .75em 0; }
-      .main-navigation ul li a:hover,
-      .main-navigation ul li a:focus {
-        background-color: #111;
-        color: #fff; }
+      .main-navigation ul li {
+        float: left;
+        position: relative; }
+        .main-navigation ul li:hover > ul, .main-navigation ul li:focus > ul {
+          left: auto; }
+        .main-navigation ul li a {
+          display: block;
+          padding: .75em 0; }
+        .main-navigation ul li a:hover,
+        .main-navigation ul li a:focus {
+          background-color: #111;
+          color: #fff; }
       .main-navigation ul ul {
+        float: left;
+        position: absolute;
+        top: 1.5em;
+        left: -999em;
+        z-index: 99999;
         margin-top: 25px;
         width: 100%;
-        background-color: #919191; }
+        background-color: #ccc;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
         .main-navigation ul ul li {
+          position: relative;
           background-color: #919191;
           width: 100%; }
           .main-navigation ul ul li a {
             display: block;
-            color: #273628; } }
+            color: #273628; }
+        .main-navigation ul ul ul {
+          right: -100%;
+          top: -1.5em; } }
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
+.menu-toggle {
+  width: 100%;
+  background-color: #111;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  font-family: "Prestige Elite";
+  font-weight: normal;
+  box-shadow: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  text-align: center; }
+  .menu-toggle:hover, .menu-toggle:focus {
+    box-shadow: none; }
+  .menu-toggle:before {
+    margin-right: .5em;
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff; }
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none; } }
 
 .nav-menu {
   border-top: 1px solid #919191; }
@@ -2737,7 +2764,13 @@ a {
   padding-bottom: 1em; }
 
 .content-area {
-  padding: .25em 2.5em; }
+  padding: .25em .75em; }
+  .content-area .entry-content ul {
+    padding-left: .25em; }
+
+@media screen and (min-width: 768px) {
+  .content-area {
+    padding: .25em 2.5em; } }
 
 .widget {
   font-size: 13.12px;
@@ -2745,7 +2778,7 @@ a {
   .widget a {
     font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
     text-transform: uppercase;
-    line-height: 250%;
+    line-height: 1.4em;
     text-decoration: none; }
   .widget .widget-title {
     margin-bottom: 0; }
@@ -2756,17 +2789,25 @@ a {
     list-style: none; }
   .widget ul a {
     display: block; }
+  .widget ul li {
+    padding-top: .35em;
+    padding-bottom: .35em; }
 
 .site-content .widget-area {
+  margin-top: .5em;
   background-image: url("dist/images/bkgd-sidebar.jpg"); }
-  .site-content .widget-area .widget {
-    margin: 4% 10%; }
-    .site-content .widget-area .widget ul,
-    .site-content .widget-area .widget .search-form {
-      background-color: #fff;
-      padding: 1em 2em;
-      border-top: 1px solid #919191;
-      border-bottom: 1px solid #919191; }
+  .site-content .widget-area .widget ul,
+  .site-content .widget-area .widget .search-form {
+    background-color: #fff;
+    padding: 1em 2em;
+    border-top: 1px solid #919191;
+    border-bottom: 1px solid #919191; }
+
+@media screen and (min-width: 768px) {
+  .site-content .widget-area {
+    margin-top: 0; }
+    .site-content .widget-area .widget {
+      margin: 4% 10%; } }
 
 .site-footer .widget a {
   color: #273628; }
@@ -2778,18 +2819,41 @@ a {
 
 .site-footer .widget li {
   padding-right: .5em;
-  padding-left: .5em;
+  padding-left: .5em; }
+
+.site-footer .widget ul > li {
   border-bottom: 1px solid #919191; }
-  .site-footer .widget li:first-child {
+  .site-footer .widget ul > li:first-child {
     border-top: 1px solid #919191; }
-  .site-footer .widget li:hover, .site-footer .widget li:focus {
+  .site-footer .widget ul > li:hover, .site-footer .widget ul > li:focus {
     background-color: rgba(39, 54, 40, 0.1); }
+  .site-footer .widget ul > li li {
+    padding-top: .5em;
+    border: none; }
 
 .site-branding {
   content: "";
   display: table;
   table-layout: fixed;
-  margin-top: 48px; }
+  transition: visibility .5s ease-in; }
+
+.banner-mobile {
+  display: block;
+  visibility: visible; }
+
+.banner-full {
+  display: none;
+  visibility: hidden; }
+
+@media screen and (min-width: 768px) {
+  .site-branding {
+    margin-top: 48px; }
+  .banner-full {
+    display: block;
+    visibility: visible; }
+  .banner-mobile {
+    display: none;
+    visibility: hidden; } }
 
 .site-footer {
   background-color: #f1f1f1;
@@ -2868,6 +2932,10 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+.entry-footer .comments-link,
+.entry-footer .edit-link {
+  display: block; }
+
 .page-staff .entry-content h3,
 .page-advisory-board .entry-content h3,
 .page-local-chapters-and-affinity-groups .entry-content h3 {
@@ -2878,6 +2946,16 @@ a {
     padding-top: 1em;
     margin-top: 1em;
     border-top: 1px solid #919191; }
+
+.archive .site-main article + article {
+  padding-top: 1em;
+  margin-top: 2em;
+  border-top: 1px solid #919191; }
+
+.recent-posts article + article {
+  padding-top: 1em;
+  margin-top: 2em;
+  border-top: 1px solid #919191; }
 
 /*--------------------------------------------------------------
 ## Asides

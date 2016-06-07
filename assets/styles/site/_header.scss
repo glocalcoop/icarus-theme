@@ -1,4 +1,31 @@
 .site-branding {
     @include clearfix;
-    margin-top: 48px;
+    transition: visibility .5s ease-in;
+}
+
+.banner-mobile {
+    display: block;
+    visibility: visible;
+}
+
+.banner-full {
+    display: none;
+    visibility: hidden;
+}
+
+@include breakpoint(md) {
+    .site-branding {
+        margin-top: 48px;
+        
+    }
+
+    .banner-full {
+        display: block;
+        visibility: visible;
+    }
+
+    .banner-mobile {
+        display: none;
+        visibility: hidden;
+    }
 }

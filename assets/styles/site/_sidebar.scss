@@ -4,7 +4,7 @@
     a {
         font-family: $typewriter;
         text-transform: uppercase;
-        line-height: 250%;
+        line-height: 1.4em;
         text-decoration: none;
     }
 
@@ -17,18 +17,26 @@
         @include no-bullets;
     }
 
-    ul a {
-        display: block;
+    ul {
+        a {
+            display: block;
+        }
+
+        li {
+            padding-top: .35em;
+            padding-bottom: .35em;
+        }
     }
 }
 
 
 .site-content {
     .widget-area {
+        margin-top: .5em;
         background-image: url('dist/images/bkgd-sidebar.jpg');
 
         .widget {
-            margin: 4% 10%;
+            // margin: .25em .75em;
 
             ul,
             .search-form {
@@ -40,6 +48,24 @@
 
         }
     }
+}
+
+@include breakpoint(md) {
+
+    .site-content {
+        .widget-area {
+            margin-top: 0;
+            
+            .widget {
+                margin: 4% 10%;
+
+                ul,
+                .search-form {}
+
+            }
+        }
+    }
+
 }
 
 .site-footer {
@@ -57,6 +83,9 @@
         li {
             padding-right: .5em;
             padding-left: .5em;
+        }
+
+        ul > li {
             border-bottom: 1px solid $color__border;
             
             &:first-child {
@@ -68,6 +97,10 @@
                 background-color: rgba($color__darkest-gray,.1);
             }
 
+            li {
+                padding-top: .5em;
+                border: none;
+            }
         }
     }
 }
