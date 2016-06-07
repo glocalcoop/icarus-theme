@@ -34,7 +34,10 @@
 		<div class="site-branding">
 			<?php if ( get_header_image() ) : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+
+					<img src="<?php echo get_template_directory_uri() . '/dist/images/banner-mobile.jpg'; ?>" alt="<?php echo __( 'Icarus Logo', 'icarus' ); ?>" class="banner-mobile">
+
+					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo __( 'Icarus Logo', 'icarus' ); ?>" class="banner-full">
 				</a>
 			<?php endif; // End header image check. ?>
 			<?php
