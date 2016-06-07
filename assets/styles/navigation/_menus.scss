@@ -38,7 +38,7 @@
 	.main-navigation {
 		position: fixed;
 		z-index: 500;
-		@include font-size($font__size-h6);
+		// @include font-size($font__size-h6);
 
 		ul {
 
@@ -81,7 +81,7 @@
 	    	ul {
 				float: left;
 				position: absolute;
-				top: 1.5em;
+				top: 1.25em;
 				left: -999em;
 				z-index: 99999;
 	    		margin-top: 25px;
@@ -91,7 +91,7 @@
 				
 				li {
 					position: relative;
-					background-color: $color__mid-gray;
+					background-color: $color__light-gray;
 					width: 100%;
 					a {
 						display: block;
@@ -102,7 +102,7 @@
 				// Third Level Fly-out Nav
 				ul {
 					right: -100%;
-					top: -1.5em;
+					top: -1.75em;
 				}
 
 	    	}

@@ -2536,9 +2536,7 @@ a {
 @media screen and (min-width: 768px) {
   .main-navigation {
     position: fixed;
-    z-index: 500;
-    font-size: 16px;
-    font-size: 1rem; }
+    z-index: 500; }
     .main-navigation ul {
       display: block;
       width: 90%;
@@ -2566,7 +2564,7 @@ a {
       .main-navigation ul ul {
         float: left;
         position: absolute;
-        top: 1.5em;
+        top: 1.25em;
         left: -999em;
         z-index: 99999;
         margin-top: 25px;
@@ -2575,14 +2573,14 @@ a {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
         .main-navigation ul ul li {
           position: relative;
-          background-color: #919191;
+          background-color: #ccc;
           width: 100%; }
           .main-navigation ul ul li a {
             display: block;
             color: #273628; }
         .main-navigation ul ul ul {
           right: -100%;
-          top: -1.5em; } }
+          top: -1.75em; } }
 
 /* Small menu. */
 .menu-toggle,
@@ -2939,14 +2937,22 @@ a {
 
 .page-staff .entry-content h3,
 .page-advisory-board .entry-content h3,
-.page-local-chapters-and-affinity-groups .entry-content h3 {
+.page-local-chapters-and-affinity-groups .entry-content h3,
+.page-publications .entry-content h3 {
   clear: both; }
   .page-staff .entry-content h3:not(:first-child),
   .page-advisory-board .entry-content h3:not(:first-child),
-  .page-local-chapters-and-affinity-groups .entry-content h3:not(:first-child) {
+  .page-local-chapters-and-affinity-groups .entry-content h3:not(:first-child),
+  .page-publications .entry-content h3:not(:first-child) {
     padding-top: 1em;
     margin-top: 1em;
     border-top: 1px solid #919191; }
+
+.page-staff .entry-content img,
+.page-advisory-board .entry-content img,
+.page-local-chapters-and-affinity-groups .entry-content img,
+.page-publications .entry-content img {
+  margin-bottom: 1em; }
 
 .archive .site-main article + article {
   padding-top: 1em;
@@ -2997,6 +3003,15 @@ a {
   margin-bottom: 0;
   margin-top: 0;
   padding: 0; }
+
+img.alignleft {
+  float: none;
+  content: "";
+  display: table;
+  table-layout: fixed; }
+  @media screen and (min-width: 768px) {
+    img.alignleft {
+      float: left; } }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
