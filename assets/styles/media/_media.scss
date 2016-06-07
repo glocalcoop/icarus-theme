@@ -7,6 +7,15 @@
 	padding: 0;
 }
 
+img.alignleft {
+    float: none;
+    @include clearfix;
+
+    @include breakpoint(md) {
+        float: left;
+    }
+}
+
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
