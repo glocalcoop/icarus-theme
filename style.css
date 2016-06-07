@@ -2765,7 +2765,8 @@ a {
 
 .content-area {
   padding: .25em .75em; }
-  .content-area .entry-content ul {
+  .content-area .entry-content ul,
+  .content-area .entry-content ol {
     padding-left: .25em; }
 
 @media screen and (min-width: 768px) {
