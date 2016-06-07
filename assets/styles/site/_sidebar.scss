@@ -20,11 +20,12 @@
     ul {
         a {
             display: block;
+            padding-top: .35em;
+            padding-bottom: .35em;
         }
 
         li {
-            padding-top: .35em;
-            padding-bottom: .35em;
+            margin-bottom: .5em;
         }
     }
 }

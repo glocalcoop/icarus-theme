@@ -2787,10 +2787,11 @@ a {
     padding: 0;
     list-style: none; }
   .widget ul a {
-    display: block; }
-  .widget ul li {
+    display: block;
     padding-top: .35em;
     padding-bottom: .35em; }
+  .widget ul li {
+    margin-bottom: .5em; }
 
 .site-content .widget-area {
   margin-top: .5em;
