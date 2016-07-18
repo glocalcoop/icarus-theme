@@ -18,15 +18,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
+		if ( have_posts() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-
 			<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -46,36 +42,19 @@ get_header(); ?>
 
 		endif; ?>
 
-		<section class="recent-posts">
+		<?php if( is_active_sidebar( 'sidebar-home' ) ) : ?>
 
-			<h2 class="page-title"><?php echo __( 'Recent Posts', 'icarus' ); ?></h2>
+			<section class="home-modules">
 
-			<?php $args = array(
-				'post_type' => 'post',
-			); ?>
-			<?php $post_query = new WP_Query( $args ); ?>
+				<?php dynamic_sidebar( 'sidebar-home' ); ?>
 
-			<?php if( $post_query->have_posts() ) : ?>
+			</section>
 
-				<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-
-				<?php endwhile; ?>
-
-				<?php the_posts_navigation(); ?>
-
-			<?php else: ?>
-
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-			<?php endif; ?>
-			
-		</section>
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
