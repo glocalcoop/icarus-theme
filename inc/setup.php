@@ -149,6 +149,15 @@ function icarus_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
+		'name'          => esc_html__( 'Home', 'icarus' ),
+		'id'            => 'sidebar-home',
+		'description'   => esc_html__( 'Add widgets here.', 'icarus' ),
+		'before_widget' => '<div id="%1$s" class="home-module %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="module-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'icarus' ),
 		'id'            => 'sidebar-footer',
 		'description'   => esc_html__( 'Add widgets here.', 'icarus' ),
