@@ -167,11 +167,6 @@
 .posts-navigation,
 .post-navigation {
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
 	.nav-previous {
 		float: left;
 		width: 50%;
@@ -181,5 +176,32 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+.comment-navigation,
+.posts-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+}
+
+.post-navigation {
+
+	.site-main & {
+		margin-top: 1em;
+	}
+
+	.nav-previous {
+		@include icon(before, previous) {
+			margin-right: .5em;
+		}
+	}
+	.nav-next {
+		@include icon(after, next) {
+			margin-left: .5em;
+		}
 	}
 }

@@ -28,12 +28,14 @@ $calibri:         Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 $typewriter: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
 $prestige:          "Prestige Elite";
+$font-awesome: 'FontAwesome';
 
 // Now create some variables for the font stacks we want to use on this site.
 $font__body:        $calibri;
 $font__monospace:   $typewriter;
 $font__navigation:  $typewriter;
 $font__side-bar:    $typewriter;
+$font__icon: $font-awesome;
 
 $font__main: $font__body;
 $font__code: $font__monospace;

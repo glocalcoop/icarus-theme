@@ -1,22 +1,40 @@
 @include breakpoint(md) {
+
+    .site-content {
+        display: flex;
+        flex-flow: row; 
+        flex-wrap: wrap;
+
+        .widget-area  {
+            flex: 0 0 $size__site-sidebar;
+        }
+    }
+
     .content-area {
-        height: 100%;
-        float: left;
-        margin: 0 (-$size__site-sidebar) 0 0;
-        width: $size__site-main;
+        flex: 0 0 $size__site-content;
     }
+    
 
-    .site-main {
-        height: 100%;
-        margin: 0 $size__site-sidebar 0 0;
-    }
 
-    .site-content .widget-area {
-        height: 100%;
-        float: right;
-        overflow: hidden;
-        width: $size__site-sidebar;
-    }
+    // .content-area {
+    //     height: 100%;
+    //     float: left;
+    //     margin: 0 (-$size__site-sidebar) 0 0;
+    //     width: $size__site-main;
+    // }
+
+    // .site-main {
+    //     height: 100%;
+    //     margin: 0 $size__site-sidebar 0 0;
+    //     padding-right: 1.5em;
+    // }
+
+    // .site-content .widget-area {
+    //     height: 100%;
+    //     float: right;
+    //     overflow: hidden;
+    //     width: $size__site-sidebar;
+    // }
 
 }
 

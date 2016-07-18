@@ -43,6 +43,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/**
+ * Icon Map
+ * https://webdevstudios.com/2015/01/28/mapping-icon-fonts-with-sass/
+ *
+ */
+/**
+ * Font Icons
+ * http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+ *
+ */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -222,19 +232,14 @@ th {
 # Typography
 --------------------------------------------------------------*/
 @media screen and (min-width: 768px) {
+  .site-content {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap; }
+    .site-content .widget-area {
+      flex: 0 0 35%; }
   .content-area {
-    height: 100%;
-    float: left;
-    margin: 0 -35% 0 0;
-    width: 100%; }
-  .site-main {
-    height: 100%;
-    margin: 0 35% 0 0; }
-  .site-content .widget-area {
-    height: 100%;
-    float: right;
-    overflow: hidden;
-    width: 35%; } }
+    flex: 0 0 65%; } }
 
 .site-footer {
   clear: both;
@@ -266,7 +271,7 @@ button,
 input,
 select,
 textarea {
-  color: #273628;
+  color: #222;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -307,7 +312,7 @@ code, kbd, tt, var {
   font-size: 0.9375rem; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #4d4d4d;
+  border-bottom: 1px dotted #777777;
   cursor: help; }
 
 mark, ins {
@@ -2460,7 +2465,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #4d4d4d;
+  color: #777777;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px; }
@@ -2499,7 +2504,7 @@ a {
   a:visited {
     color: #CB505D; }
   a:hover, a:focus, a:active {
-    color: #4d4d4d; }
+    color: #777777; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -2577,7 +2582,7 @@ a {
           width: 100%; }
           .main-navigation ul ul li a {
             display: block;
-            color: #273628; }
+            color: #222; }
         .main-navigation ul ul ul {
           right: -100%;
           top: -1.75em; } }
@@ -2623,12 +2628,6 @@ a {
     .nav-menu > li:not(:last-child) {
       border-right: 1px solid #919191; }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden; }
-
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -2641,6 +2640,30 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+.site-main .comment-navigation, .site-main
+.posts-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.site-main .post-navigation {
+  margin-top: 1em; }
+
+.post-navigation .nav-previous:before {
+  content: "";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "FontAwesome";
+  margin-right: .5em; }
+
+.post-navigation .nav-next:after {
+  content: "";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "FontAwesome";
+  margin-left: .5em; }
 
 /*--------------------------------------------------------------
 ## Breadcrumbs
@@ -2810,7 +2833,7 @@ a {
       margin: 4% 10%; } }
 
 .site-footer .widget a {
-  color: #273628; }
+  color: #222; }
 
 .site-footer .widget .widget-title {
   text-transform: uppercase;
@@ -2826,7 +2849,7 @@ a {
   .site-footer .widget ul > li:first-child {
     border-top: 1px solid #919191; }
   .site-footer .widget ul > li:hover, .site-footer .widget ul > li:focus {
-    background-color: rgba(39, 54, 40, 0.1); }
+    background-color: rgba(34, 34, 34, 0.1); }
   .site-footer .widget ul > li li {
     padding-top: .5em;
     border: none; }
@@ -2860,12 +2883,12 @@ a {
   border-top: 3px solid #919191; }
 
 .footer-links {
-  background-color: rgba(39, 54, 40, 0.05); }
+  background-color: rgba(34, 34, 34, 0.05); }
 
 .site-license {
   margin-bottom: 5em;
   padding: 1em 2em;
-  background-color: #4d4d4d;
+  background-color: #777777;
   color: #ccc;
   font-size: 13.12px;
   font-size: 0.82rem; }
@@ -2964,6 +2987,78 @@ a {
   padding-top: 1em;
   margin-top: 2em;
   border-top: 1px solid #919191; }
+
+.format-aside {
+  padding: .5em .25em;
+  background-color: #e5e5e3;
+  font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center; }
+
+.home .content-area {
+  padding-top: 0; }
+
+.home .page-title {
+  color: #7C0E1E; }
+
+.home .module-title {
+  width: 100%;
+  font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+@media screen and (min-width: 768px) {
+  .home .content-area {
+    flex: 0 0 100%; } }
+
+.intro {
+  background-color: rgba(22, 120, 163, 0.1); }
+  .intro p {
+    font-size: 20px;
+    font-size: 1.25rem; }
+
+@media screen and (max-width: 767px) {
+  .intro {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute; } }
+
+.intro-image {
+  margin: .5em 0;
+  text-align: center; }
+
+@media screen and (min-width: 768px) {
+  .intro {
+    margin-right: -2.5em;
+    margin-left: -2.5em;
+    padding: 1em 2.5em; }
+    .intro p {
+      font-size: 24px;
+      font-size: 1.5rem; }
+  .intro-image {
+    float: left;
+    margin-right: 1em;
+    padding-top: .5em; }
+  .page-title {
+    margin-bottom: 0; }
+  .home-module {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%; }
+    .home-module .entry {
+      flex: 0 0 50%;
+      padding-right: 2em; }
+      .home-module .entry:last-child {
+        border-left: 1px solid #e5e5e3;
+        padding-right: 0;
+        padding-left: 2em; } }
 
 /*--------------------------------------------------------------
 ## Asides

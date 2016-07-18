@@ -16,8 +16,8 @@ $color__black: #111;
 // $icarus-gray:           #ccc;
 // $icarus-light-gray:     #E5E5E3;
 
-$color__darkest-gray: #273628;
-$color__dark-gray: #4d4d4d;
+$color__darkest-gray: #222;
+$color__dark-gray: #777777;
 $color__mid-gray: lighten($color__black, 50%);
 $color__light-gray: #ccc;
 $color__lightest-gray: #e5e5e3;
@@ -25,6 +25,7 @@ $color__lightest-gray: #e5e5e3;
 $color__primary: #7C0E1E;
 $color__secondary: #CB505D;
 $color__accent: #9A8CB6;
+$color__muted: #1678A3;
 
 $color__success: #3C621B;
 $color__info: #1678A3;
