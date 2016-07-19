@@ -179,8 +179,7 @@
 	}
 }
 
-.comment-navigation,
-.posts-navigation {
+.comment-navigation {
 
 	.site-main & {
 		margin: 0 0 1.5em;
@@ -204,4 +203,34 @@
 			margin-left: .5em;
 		}
 	}
+}
+
+.posts-navigation {
+	.site-main & {
+		margin-top: 1em;
+	}
+
+	.current,
+	.page,
+	.nextpostslink {
+		border: 1px solid $color__dark-gray;
+		padding: .1em .25em;
+		margin: 0 .1em;
+	}
+
+	.current {
+		background-color: $color__dark-gray;
+		color: $color__white;
+	}
+
+	.page,
+	.nextpostslink {
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			background-color: rgba($color__dark-gray,.1);
+		}
+	}
+
+	.nextpostslink {}
 }

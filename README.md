@@ -36,6 +36,7 @@ Icarus includes support for Infinite Scroll in Jetpack.
    * Removed post list from homepage template
    * Added homepage widget area to add widget items
    * Updated styles
+   * Added support of numeric pagination
 
 = 1.0 - May 12 2015 =
 * Initial release

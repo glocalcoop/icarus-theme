@@ -2641,8 +2641,7 @@ a {
   text-align: right;
   width: 50%; }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation {
+.site-main .comment-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
 
@@ -2664,6 +2663,28 @@ a {
   font-weight: normal;
   font-family: "FontAwesome";
   margin-left: .5em; }
+
+.site-main .posts-navigation {
+  margin-top: 1em; }
+
+.posts-navigation .current,
+.posts-navigation .page,
+.posts-navigation .nextpostslink {
+  border: 1px solid #777777;
+  padding: .1em .25em;
+  margin: 0 .1em; }
+
+.posts-navigation .current {
+  background-color: #777777;
+  color: #fff; }
+
+.posts-navigation .page,
+.posts-navigation .nextpostslink {
+  text-decoration: none; }
+  .posts-navigation .page:hover, .posts-navigation .page:focus,
+  .posts-navigation .nextpostslink:hover,
+  .posts-navigation .nextpostslink:focus {
+    background-color: rgba(119, 119, 119, 0.1); }
 
 /*--------------------------------------------------------------
 ## Breadcrumbs
