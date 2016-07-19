@@ -120,3 +120,19 @@ function icarus_category_transient_flusher() {
 }
 add_action( 'edit_category', 'icarus_category_transient_flusher' );
 add_action( 'save_post',     'icarus_category_transient_flusher' );
+
+/**
+ * Add WP Navi, if it exists
+ */
+function icarus_page_navigation() {
+	if( function_exists( 'wp_pagenavi' ) ) {
+		echo '<nav class="navigation posts-navigation" role="navigation">';
+		echo '<h2 class="screen-reader-text">Posts navigation</h2>';
+		echo '<div class="nav-links">';
+		wp_pagenavi();
+		echo '</div>';
+		echo '</nav>';
+	} else {
+		the_posts_navigation();
+	}
+}
