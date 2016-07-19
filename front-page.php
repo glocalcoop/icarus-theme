@@ -19,8 +19,15 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="home-header">
+
+					<?php if( has_post_thumbnail() ) : ?>
+						<figure class="intro-image">
+						<?php the_post_thumbnail( 'thumbnail' ); ?>
+						</figure>
+					<?php endif; ?>
+
+					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 			<?php
 

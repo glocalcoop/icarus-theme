@@ -9,13 +9,10 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'intro' ); ?>>
+<?php $content_class = ( empty( $post->post_content ) ) ? ' no-content' : ''; ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'intro'. $content_class ); ?>>
 	<header class="entry-header intro-header">
-		<?php if( has_post_thumbnail() ) : ?>
-			<figure class="intro-image">
-			<?php the_post_thumbnail( 'thumbnail' ); ?>
-			</figure>
-		<?php endif; ?>
 		<?php the_title( '<h1 class="page-title intro-title screen-reader-text">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
