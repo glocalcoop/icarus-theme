@@ -3096,13 +3096,14 @@ a {
     position: absolute; } }
 
 .intro-image {
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
 
 @media screen and (min-width: 768px) {
   .home-header {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     margin-right: -2.5em;
     margin-left: -2.5em;
     padding: 1em 2.5em;
@@ -3117,7 +3118,8 @@ a {
   .intro-image {
     padding-right: 2em; }
   .page-title {
-    align-self: end; }
+    align-self: end;
+    text-align: left; }
   .home-modules {
     display: flex;
     flex-flow: row;
