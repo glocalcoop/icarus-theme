@@ -38,3 +38,7 @@ img {
 }
 
 @import "tables";
+
+.no-content {
+    @include visuallyhidden;
+}

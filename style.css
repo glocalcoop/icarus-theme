@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Pea, Glocal
 Author URI: http://glocal.coop
 Description: Custom WordPress theme for The Icarus Project
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: icarus
@@ -2415,6 +2415,16 @@ table {
   margin: 0 0 1.5em;
   width: 100%; }
 
+.no-content {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -3036,27 +3046,46 @@ a {
 .home .content-area {
   padding-top: 0; }
 
-.home .page-title {
-  color: #7C0E1E; }
-
+.home .page-title,
 .home .module-title {
-  width: 100%;
   font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
   text-transform: uppercase;
   font-weight: normal; }
+
+.home .page-title {
+  color: #7C0E1E; }
 
 @media screen and (min-width: 768px) {
   .home .content-area {
     flex: 0 0 100%; } }
 
+.home-header {
+  margin: 0 -.75em;
+  padding: .5em;
+  background-color: rgba(154, 140, 182, 0.1); }
+
+.page-title,
+.module-title {
+  text-align: center; }
+
+.page-title {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+.module-title {
+  font-size: 20px;
+  font-size: 1.25rem; }
+
 .intro {
+  clear: both;
   background-color: rgba(22, 120, 163, 0.1); }
   .intro p {
     font-size: 20px;
     font-size: 1.25rem; }
 
 @media screen and (max-width: 767px) {
-  .intro {
+  .intro,
+  .intro-image {
     margin: -1px;
     padding: 0;
     width: 1px;
@@ -3067,10 +3096,17 @@ a {
     position: absolute; } }
 
 .intro-image {
-  margin: .5em 0;
-  text-align: center; }
+  margin: 0; }
 
 @media screen and (min-width: 768px) {
+  .home-header {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin-right: -2.5em;
+    margin-left: -2.5em;
+    padding: 1em 2.5em;
+    width: calc( 100% + 5em); }
   .intro {
     margin-right: -2.5em;
     margin-left: -2.5em;
@@ -3079,23 +3115,43 @@ a {
       font-size: 24px;
       font-size: 1.5rem; }
   .intro-image {
-    float: left;
-    margin-right: 1em;
-    padding-top: .5em; }
+    padding-right: 2em; }
   .page-title {
-    margin-bottom: 0; }
-  .home-module {
+    align-self: end; }
+  .home-modules {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
     width: 100%; }
-    .home-module .entry {
-      flex: 0 0 50%;
+    .home-modules .home-module {
+      flex: 0 0 50%; }
+    .home-modules .widget-odd {
       padding-right: 2em; }
-      .home-module .entry:last-child {
-        border-left: 1px solid #e5e5e3;
+    .home-modules .widget-even {
+      border-left: 1px solid #e5e5e3;
+      padding-right: 0;
+      padding-left: 2em; }
+    .home-modules .widget_siteorigin-panels-postloop {
+      flex: 0 0 100%;
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+      width: 100%; }
+      .home-modules .widget_siteorigin-panels-postloop .entry {
+        flex: 0 0 50%;
+        padding-right: 2em; }
+        .home-modules .widget_siteorigin-panels-postloop .entry:last-child {
+          border-left: 1px solid #e5e5e3;
+          padding-right: 0;
+          padding-left: 2em; }
+    .home-modules .full-width {
+      flex: 0 0 100%;
+      width: 100%;
+      padding-right: 0; }
+      .home-modules .full-width:last-child {
+        border-left-width: 0;
         padding-right: 0;
-        padding-left: 2em; } }
+        padding-left: 0; } }
 
 /*--------------------------------------------------------------
 ## Asides

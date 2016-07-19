@@ -5,11 +5,11 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
+A custom theme for Icarus.
 
 == Description ==
 
@@ -28,6 +28,12 @@ A custom theme for Icarus.
 Icarus includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.2 - July 19, 2015 =
+* [Enhancement #1489] - Further homepage layout modification
+   * Moved home featured image into `front-page.php` template
+   * Updated homepage styles to account for more layout options.
+   * Note: widgets with class full-width will span width of content area rather than display as 2 columns
 
 = 1.0.1 - July 18, 2015 =
 * [Enhancement #1489] - Modified homepage layout
