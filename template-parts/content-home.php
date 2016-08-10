@@ -27,4 +27,9 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php if( has_post_thumbnail() ) : ?>
+		<figure class="intro-image">
+		<?php the_post_thumbnail( 'full' ); ?>
+		</figure>
+	<?php endif; ?>
 </article><!-- #post-## -->

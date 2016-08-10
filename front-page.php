@@ -19,15 +19,8 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
-				<header class="home-header">
-
-					<?php if( has_post_thumbnail() ) : ?>
-						<figure class="intro-image">
-						<?php the_post_thumbnail( 'thumbnail' ); ?>
-						</figure>
-					<?php endif; ?>
-
-					<h1 class="page-title"><?php single_post_title(); ?></h1>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
 			<?php
 
@@ -41,13 +34,9 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', 'home' );
 
-			endwhile;
+			endwhile; ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+		<?php endif; ?>
 
 		<?php if( is_active_sidebar( 'sidebar-home' ) ) : ?>
 

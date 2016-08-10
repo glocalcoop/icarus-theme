@@ -3044,82 +3044,79 @@ a {
   text-align: center; }
 
 .home .content-area {
-  padding-top: 0; }
+  padding-top: 0;
+  flex: 0 0 100%; }
+
+.home .intro {
+  margin: 0 -.75em;
+  padding: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  background-color: rgba(22, 120, 163, 0.1);
+  text-align: center; }
+  .home .intro p {
+    font-size: 20px;
+    font-size: 1.25rem; }
+
+.home .intro-content {
+  flex: 0 0 100%;
+  order: 2; }
+
+.home .intro-image {
+  flex: 0 0 100%;
+  order: 1;
+  margin: 0; }
+  .home .intro-image img {
+    width: 100%;
+    height: auto;
+    max-width: 250px; }
+
+.home .home-header {
+  margin: 0 -.75em;
+  padding: .5em;
+  background-color: rgba(154, 140, 182, 0.1); }
 
 .home .page-title,
 .home .module-title {
   font-family: "Prestige Elite", "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
   text-transform: uppercase;
-  font-weight: normal; }
-
-.home .page-title {
-  color: #7C0E1E; }
-
-@media screen and (min-width: 768px) {
-  .home .content-area {
-    flex: 0 0 100%; } }
-
-.home-header {
-  margin: 0 -.75em;
-  padding: .5em;
-  background-color: rgba(154, 140, 182, 0.1); }
-
-.page-title,
-.module-title {
+  font-weight: normal;
   text-align: center; }
 
-.page-title {
+.home .page-title {
   font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  color: #7C0E1E; }
 
-.module-title {
+.home .module-title {
   font-size: 20px;
   font-size: 1.25rem; }
 
-.intro {
-  clear: both;
-  background-color: rgba(22, 120, 163, 0.1); }
-  .intro p {
-    font-size: 20px;
-    font-size: 1.25rem; }
-
-@media screen and (max-width: 767px) {
-  .intro,
-  .intro-image {
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip: rect(0, 0, 0, 0);
-    position: absolute; } }
-
-.intro-image {
-  margin: 0;
-  padding: 0; }
-
 @media screen and (min-width: 768px) {
-  .home-header {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: no-wrap;
+  .home .intro {
     margin-right: -2.5em;
     margin-left: -2.5em;
     padding: 1em 2.5em;
-    width: calc( 100% + 5em); }
-  .intro {
-    margin-right: -2.5em;
-    margin-left: -2.5em;
-    padding: 1em 2.5em; }
-    .intro p {
+    text-align: left; }
+    .home .intro p {
       font-size: 24px;
       font-size: 1.5rem; }
-  .intro-image {
-    padding-right: 2em; }
-  .page-title {
-    align-self: end;
-    text-align: left; }
+  .home .intro-content {
+    flex: 0 0 75%;
+    order: 1;
+    padding-right: 1em; }
+  .home .intro-image {
+    flex: 0 0 25%;
+    order: 2;
+    padding-left: 1em; }
+    .home .intro-image img {
+      max-width: 100%; } }
+
+/**
+ * Home Modules
+ */
+@media screen and (min-width: 768px) {
   .home-modules {
     display: flex;
     flex-flow: row;
