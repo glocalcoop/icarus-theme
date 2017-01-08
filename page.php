@@ -15,7 +15,8 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-				<?php if ( current_theme_supports( 'breadcrumb-trail' ) ) breadcrumb_trail( array( 'show_browse' => false, 'front_page' => false ) ); ?>
+		<?php icarus_display_breadcrumbs(); ?>
+
 		<main id="main" class="site-main" role="main">
 
 			<?php
