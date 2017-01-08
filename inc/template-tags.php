@@ -136,3 +136,20 @@ function icarus_page_navigation() {
 		the_posts_navigation();
 	}
 }
+
+/**
+ * Display Breadcrumbs
+ *
+ * @since 1.0.3
+ *
+ * @uses bcn_display()
+ */
+function icarus_display_breadcrumbs() {
+	?>
+	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if( function_exists( 'bcn_display' ) ) {
+        bcn_display();
+    } ?>
+	</div>
+	<?php
+}
