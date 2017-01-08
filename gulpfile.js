@@ -23,25 +23,19 @@ var onError = function( err ) {
     this.emit( 'end' );
 };
 
-var src = './assets/';
+var src = './src/';
 var dest = './dist/';
 
 var paths = {
     /* Source paths */
     styles: src + 'styles/**/*.scss',
-    scripts: src + 'scripts/**/*',
+    scripts: src + 'scripts/',
     images: src + 'images/**/*',
-    sprites: src + 'images/sprites/',
-    fonts: src + 'fonts/*',
-    libs: src + 'vendor/**/*',
 
     /* Output paths */
     stylesOutput: dest + 'styles/',
     scriptsOutput: dest + 'scripts/',
     imagesOutput: dest + 'images/',
-    spritesOutput: dest + 'images/sprites/',
-    fontsOutput: dest + 'fonts/',
-    libsOutput: dest + 'vendor/'
 };
 
 
@@ -69,9 +63,11 @@ gulp.task( 'styles', function() {
 });
 
 gulp.task('scripts', function(){
-    return gulp.src(paths.scripts)
-        .pipe(gulp.dest(paths.scriptsOutput))
-        .pipe( notify( { message: 'Script task complete' } ) );
+  return gulp.src(paths.scripts)
+      .pipe(concat('main.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(paths.scriptsOutput))
+      .pipe( notify( { message: 'Script task complete' } ) );
 });
 
 gulp.task('images', function(){
@@ -85,35 +81,11 @@ gulp.task('images', function(){
     .pipe( notify( { message: 'Images task complete' } ) );
 });
 
-gulp.task('sprites', function () {
-  return sprity.src({
-    src: paths.sprites + '*.{jpg,png}',
-    split: true,
-    processor: 'scss', // make sure you have installed sprity-sass 
-  })
-  .pipe(gulpif('*.png', gulp.dest(paths.spritesOutput), gulp.dest('./assets/styles/components')))
-});
-
-gulp.task('fonts', function(){
-  return gulp.src(paths.fonts)
-    .pipe(gulp.dest(paths.fontsOutput))
-    .pipe( notify( { message: 'Fonts task complete' } ) );
-});
-
-gulp.task('libs', function() {
-    return gulp.src(paths.libs)
-        .pipe(gulp.dest(paths.libsOutput))
-        .pipe( notify( { message: 'Libs task complete' } ) );
-});
-
 gulp.task( 'watch', function() {
     livereload.listen();
     gulp.watch( paths.styles, [ 'styles' ] );
     gulp.watch( paths.scripts, [ 'scripts' ] );
     gulp.watch( paths.images, [ 'images' ] );
-    gulp.watch( paths.fonts, [ 'fonts' ] );
-    gulp.watch( paths.sprites, [ 'sprites' ] );
-    gulp.watch( paths.libs, [ 'libs' ] );
 } );
 
-gulp.task( 'default', [ 'watch', 'styles', 'scripts', 'images', 'fonts', 'libs'], function() {});
+gulp.task( 'default', [ 'watch', 'styles', 'scripts', 'images' ], function() {});
