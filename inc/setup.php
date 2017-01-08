@@ -17,19 +17,6 @@ if ( ! function_exists( 'icarus_setup' ) ) :
  */
 function icarus_setup() {
 
-	/** 
-	 * Set up the Hybrid Core framework.
-	 */
-	// Sets the path to the core framework directory.
-	define( 'HYBRID_DIR', trailingslashit( get_template_directory() ) . 'inc/hybrid/' );
-
-	// Sets the path to the core framework directory URI.
-	define( 'HYBRID_URI', trailingslashit( get_template_directory_uri() ) . 'inc/hybrid/' );
-
-	require_once( trailingslashit( get_template_directory() ) . 'inc/hybrid/hybrid.php' );
-
-	new Hybrid();
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -48,6 +35,17 @@ function icarus_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
+	/**
+	 * Add Support for `custom-logo` added in WP 4.5
+	 * Not currently displayed in theme, which uses custom header installed
+	 * But, used to display OpenGraph image when JetPack is active
+	 *
+	 * @uses add_theme_support()
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support( 'custom-logo' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -93,32 +91,6 @@ function icarus_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'icarus_setup' );
-
-/** 
- * Hybrid Theme Setup Function
- */
-add_action( 'after_setup_theme', 'icarus_hybrid_setup', 5 );
-
-/**
- * Sets up the Hybrid Core Framework for theme.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-function icarus_hybrid_setup() {
-
-    /**
-	 * @link http://themehybrid.com/docs/breadcrumb-trail#adding-support
-	 */
-    add_theme_support( 'breadcrumb-trail' );
-
-    /**
-	 * @link http://themehybrid.com/docs/get-the-image#activate
-	 */
-    add_theme_support( 'get-the-image' );
-}
-
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
