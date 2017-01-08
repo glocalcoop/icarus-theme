@@ -2,10 +2,9 @@
 
 Contributors: misfist <pea@glocal.coop>
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
-
-Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.0.2
+Requires at least: 4.7
+Tested up to: 4.7
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +27,12 @@ A custom theme for Icarus.
 Icarus includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.3 - January 8, 2015 =
+* Bug #1659 - Theme Notices affecting 4.7 upgrade
+   * Removed hybrid core, which hasn't been updated in over a year
+   * Replaced breadcrumbs with breadcrumb-navxt
+* Feature #1706 - Replaced default JetPack OpenGraph image if `custom-logo` is set
 
 = 1.0.2 - July 19, 2015 =
 * [Enhancement #1489] - Further homepage layout modification
